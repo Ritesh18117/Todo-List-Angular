@@ -1,0 +1,16 @@
+<h3>Work to do : {{ todo.title }}</h3>
+<p>Description : {{todo.desc}} </p>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="activeStatus(todo)">
+    <label class="form-check-label" for="flexCheckDefault">
+        <div *ngIf="todo.active; else elseBlock">
+            Mark as Done
+        </div>
+        <ng-template #elseBlock>
+            Done
+        </ng-template>
+    </label>
+</div>
+
+<br>
+<button class="btn btn-danger" (click)="onClick(todo)">Remove</button>
